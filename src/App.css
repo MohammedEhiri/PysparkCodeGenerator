@@ -1,38 +1,127 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Bebas+Neue&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+@keyframes swipeUp {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-.App-link {
-  color: #61dafb;
+.swipe-up {
+  animation: swipeUp 1s ease-in-out forwards;
 }
 
-@keyframes App-logo-spin {
+.swipe-up-delayed {
+  animation: swipeUp 1.5s ease-in-out forwards;
+}
+
+.swipe-up-delayed-up {
+  animation: swipeUp 2s ease-in-out forwards;
+}
+
+
+
+
+.animate-scroll {
+  display: inline-flex;
+  animation: scroll 30s linear infinite; /* Adjust the duration to control speed */
+}
+
+@keyframes fadeInUp {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+
+.snap-y {
+  scroll-snap-type: y mandatory;
+}
+
+.snap-start {
+  scroll-snap-align: start;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+/* Custom Scrollbar Styles */
+.scrollable-code {
+  max-height: 50vh; /* Set max height for scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+
+/* For WebKit browsers (Chrome, Safari) */
+.scrollable-code::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+.scrollable-code::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Track color */
+}
+
+.scrollable-code::-webkit-scrollbar-thumb {
+  background: #333; /* Thumb color */
+  border-radius: 6px; /* Rounded corners */
+}
+
+.scrollable-code::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Thumb color on hover */
+}
+
+/* For Firefox */
+.scrollable-code {
+  scrollbar-color: #333 #f0f0f0; /* Thumb color and track color */
+}
+
+
+
+.fade-in-up {
+  animation: fadeInUp 2s ease forwards; /* Adjust duration as needed */
+}
+
+
+body {
+  background-image: radial-gradient(#ebe7e5 1px, transparent 1px);
+  background-size: 20px 20px;
 }
